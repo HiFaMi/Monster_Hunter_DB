@@ -1,11 +1,11 @@
 from django.db import models
 
 __all__ = (
-    'LongSword',
+    'OneHandSword',
 )
 
 
-class LongSword(models.Model):
+class OneHandSword(models.Model):
     name = models.CharField(max_length=200)
     rare = models.IntegerField()
     produce = models.CharField(max_length=100)
