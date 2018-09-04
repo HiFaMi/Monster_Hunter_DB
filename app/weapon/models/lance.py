@@ -1,11 +1,11 @@
 from django.db import models
 
 __all__ = (
-    'Hammer',
+    'Lance',
 )
 
 
-class Hammer(models.Model):
+class Lance(models.Model):
     name = models.CharField(max_length=200)
     rare = models.IntegerField()
     produce = models.CharField(max_length=100)
