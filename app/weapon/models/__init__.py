@@ -6,3 +6,4 @@ from .hammer import *
 from .lance import *
 from .gun_lance import *
 from .switch_axe import *
+from .charge_blade import *
