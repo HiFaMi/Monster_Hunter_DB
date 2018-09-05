@@ -8,3 +8,4 @@ from .gun_lance import *
 from .switch_axe import *
 from .charge_blade import *
 from .light_bowgun import *
+from .heavy_bowgun import *

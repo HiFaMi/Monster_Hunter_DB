@@ -467,6 +467,38 @@ def light_bowgun():
     print('Light Bowgun Done')
 
 
+def heavy_bowgun():
+
+    ws = WB['Heavy_Bowgun']
+
+    for row in range(1, 85):
+        name = ws.cell(row=row, column=1).value
+        rare = ws.cell(row=row, column=2).value
+        produce = ws.cell(row=row, column=3).value
+        attack = ws.cell(row=row, column=4).value
+        recoil = ws.cell(row=row, column=5).value
+        fatal_blow = ws.cell(row=row, column=6).value
+        if ws.cell(row=row, column=7).value is None:
+            slot = '없음'
+        else:
+            slot = ws.cell(row=row, column=7).value
+        custom_mod = ws.cell(row=row, column=8).value
+        special_ammo = ws.cell(row, column=9).value
+
+        HeavyBowgun.objects.create(
+            name=name,
+            rare=rare,
+            produce=produce,
+            attack=attack,
+            recoil=recoil,
+            fatal_blow=fatal_blow,
+            slot=slot,
+            custom_mod=custom_mod,
+            special_ammo=special_ammo,
+        )
+    print('Light Bowgun Done')
+
+
 if __name__ == "__main__":
 
     great_sword()
@@ -478,3 +510,4 @@ if __name__ == "__main__":
     gun_lance()
     switch_axe()
     light_bowgun()
+    heavy_bowgun()
