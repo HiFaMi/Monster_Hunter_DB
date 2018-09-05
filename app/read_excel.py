@@ -471,7 +471,7 @@ def heavy_bowgun():
 
     ws = WB['Heavy_Bowgun']
 
-    for row in range(1, 85):
+    for row in range(1, 80):
         name = ws.cell(row=row, column=1).value
         rare = ws.cell(row=row, column=2).value
         produce = ws.cell(row=row, column=3).value
@@ -496,7 +496,7 @@ def heavy_bowgun():
             custom_mod=custom_mod,
             special_ammo=special_ammo,
         )
-    print('Light Bowgun Done')
+    print('heavy Bowgun Done')
 
 
 if __name__ == "__main__":
