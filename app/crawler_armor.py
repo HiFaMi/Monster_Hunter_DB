@@ -20,7 +20,7 @@ code_list = soup.select('td.name.left > a')
 wb = openpyxl.load_workbook('armor_list.xlsx')
 ws = wb['Armor']
 
-for code_index,code in enumerate(code_list):
+for code_index, code in enumerate(code_list):
     armor_detail_url = requests.get(url + code.get('href'))
     soup = BeautifulSoup(armor_detail_url.text, 'lxml')
     armor_detail_list = soup.select('div.mhw.armor_filter.armor_detail > table > tbody > tr > td')
