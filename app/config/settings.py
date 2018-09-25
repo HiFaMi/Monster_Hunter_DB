@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'weapon.apps.WeaponConfig',
+    'skill.apps.SkillConfig',
+    'armor.apps.ArmorConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
