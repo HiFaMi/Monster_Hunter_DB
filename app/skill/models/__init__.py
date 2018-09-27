@@ -1,3 +1,3 @@
-from django.db import models
+from .skill import *
 
-# Create your models here.
+

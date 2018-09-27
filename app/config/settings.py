@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'weapon.apps.WeaponConfig',
     'skill.apps.SkillConfig',
     'armor.apps.ArmorConfig',
+    'items.apps.ItemsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
