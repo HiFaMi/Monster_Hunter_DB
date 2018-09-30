@@ -14,6 +14,7 @@ class Items(models.Model):
     armor = models.ManyToManyField(
         Armor,
         related_name='makes_armor',
+        null=True,
     )
 
     charge_blade = models.ManyToManyField(
