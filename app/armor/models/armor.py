@@ -17,5 +17,4 @@ class Armor(models.Model):
     vs_ice = models.IntegerField()
     vs_dragon = models.IntegerField()
     slot = models.CharField(max_length=50)
-    first_skill = models.CharField(max_length=150)
-    second_skill = models.CharField(max_length=150)
+
