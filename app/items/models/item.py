@@ -66,18 +66,18 @@ class Items(models.Model):
 
     one_hand_sword = models.ManyToManyField(
         OneHandSword,
-        related_name='makes_heavy_bowgun',
+        related_name='makes_one_hand_sword',
         null=True,
     )
 
     switch_axe = models.ManyToManyField(
         SwitchAxe,
-        related_name='makes_heavy_bowgun',
+        related_name='makes_switch_axe',
         null=True,
     )
 
     two_sowrds = models.ManyToManyField(
         TwoSwords,
-        related_name='makes_heavy_bowgun',
+        related_name='makes_two_swords',
         null=True,
     )
