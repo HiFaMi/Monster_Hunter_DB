@@ -9,6 +9,7 @@ openpyxl = "*"
 requests = "*"
 "beautifulsoup4" = "*"
 lxml = "*"
+uwsgi = "*"
 
 [dev-packages]
 django-extensions = "*"

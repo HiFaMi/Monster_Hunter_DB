@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 pipenv lock --requirements > requirements.txt
-docker build -t monster:base -f Dockerfile.base .
+docker build -t monster:production -f Dockerfile.production .
 rm -rf requirements.txt
