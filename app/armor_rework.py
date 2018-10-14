@@ -11,7 +11,7 @@ def replace_multiple(main_string, to_be_replaces, new_string):
     return main_string
 
 
-for i in range(1, 144):
+for i in range(1, 754):
     base = ws.cell(row=i, column=6).value
     replace_base = replace_multiple(base, ['화', '수', '뇌', '빙', '용'], '')
     armor_list = replace_base.split(':')
