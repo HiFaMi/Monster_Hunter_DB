@@ -6,6 +6,7 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
 django.setup()
 
 from armor.models.armor import Armor
+from items.models.accessory import Accessory
 
 wb = openpyxl.load_workbook('armor_list.xlsx')
 
@@ -43,8 +44,23 @@ def armor_model():
     print('Armor Done')
 
 
+def accessory_model():
+    ws = wb['Accessory']
+
+    for index in range(1, 99):
+        name = ws.cell(row=index, column=1). value
+        slot_lv = ws.cell(row=index, column=2). value
+        rare = ws.cell(row=index, column=3). value
+
+        Accessory.objects.create(
+            name=name,
+            slot_lv=slot_lv,
+            rare=rare,
+        )
+    print('Accessory Done')
+
+
 if __name__ == '__main__':
     armor_model()
-
-
+    accessory_model()
 
