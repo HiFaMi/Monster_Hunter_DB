@@ -2,13 +2,13 @@ import openpyxl
 import os
 import django
 
-from items.models import Items
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
 django.setup()
 
 from armor.models.armor import Armor
 from items.models.accessory import Accessory
+from items.models import Items
 
 wb = openpyxl.load_workbook('armor_list.xlsx')
 
@@ -71,6 +71,8 @@ def items_model():
         Items.objects.create(
             name=name,
         )
+
+    print('Items Done')
 
 
 if __name__ == '__main__':
