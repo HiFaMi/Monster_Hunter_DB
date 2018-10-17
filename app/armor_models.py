@@ -2,6 +2,8 @@ import openpyxl
 import os
 import django
 
+from items.models import Items
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
 django.setup()
 
@@ -60,7 +62,18 @@ def accessory_model():
     print('Accessory Done')
 
 
+def items_model():
+    ws = wb['Item']
+
+    for index in range(1, 393):
+        name = ws.cell(row=index, column=1).value
+
+        Items.objects.create(
+            name=name,
+        )
+
+
 if __name__ == '__main__':
     armor_model()
     accessory_model()
-
+    items_model()
