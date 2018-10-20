@@ -2,13 +2,13 @@ import openpyxl
 import os
 import django
 
-
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
 django.setup()
 
 from armor.models.armor import Armor
 from items.models.accessory import Accessory
 from items.models import Items
+from skill.models import Skill
 
 wb = openpyxl.load_workbook('armor_list.xlsx')
 
@@ -75,7 +75,31 @@ def items_model():
     print('Items Done')
 
 
+def skill_model():
+    ws = wb['Skill']
+
+    for row in range(1, 144):
+        name = ws.cell(row=row, column=1).value
+        Lv1 = ws.cell(row=row, column=3).value
+        Lv2 = ws.cell(row=row, column=4).value
+        Lv3 = ws.cell(row=row, column=5).value
+        Lv4 = ws.cell(row=row, column=6).value
+        Lv5 = ws.cell(row=row, column=7).value
+
+        Skill.objects.create(
+            name=name,
+            Lv1=Lv1,
+            Lv2=Lv2,
+            Lv3=Lv3,
+            Lv4=Lv4,
+            Lv5=Lv5,
+        )
+
+    print('Skill Done')
+
+
 if __name__ == '__main__':
     armor_model()
     accessory_model()
     items_model()
+    skill_model()
