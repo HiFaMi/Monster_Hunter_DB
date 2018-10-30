@@ -1,0 +1,252 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+* {
+  font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: #F2F2F2;
+}
+
+.contanier {
+  max-width: 1140px;
+  width: 100%;
+  padding: 16px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/*sign========================================*/
+.sign-wrap {
+  max-width: 600px;
+  width: 100%;
+  background: #fff;
+  margin: 0 auto;
+  padding: 16px 16px 32px 32px;
+  box-sizing: border-box;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+}
+
+.sign-wrap .sign-required {
+  color: #F86861;
+}
+
+.sign-wrap .wrap-title {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: left;
+  padding: 16px 0;
+  font-size: 250%;
+  font-weight: 700;
+}
+
+.sign-wrap label {
+  display: block;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 8px 0;
+  box-sizing: border-box;
+}
+
+.sign-wrap label input {
+  margin-top: 6px;
+  width: 100%;
+  height: 32px;
+  font-size: 14px;
+  padding: 4px;
+  box-sizing: border-box;
+  border-style: none;
+  border-radius: 2px;
+  border: 1px solid #F2F2F2;
+}
+
+.sign-wrap button {
+  text-align: center;
+  display: block;
+  max-width: 400px;
+  width: 100%;
+  margin: 16px auto 0;
+  padding: 8px;
+  font-size: 16px;
+  color: #fff;
+  border-style: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+  background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.sign-wrap .facebook-signin,
+.sign-wrap .sign-up {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  margin: 16px auto 0;
+  padding: 8px;
+  font-size: 16px;
+  color: #fff;
+  border-style: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+  text-decoration: none;
+}
+
+.sign-wrap .facebook-signin a,
+.sign-wrap .sign-up a {
+  color: #fff;
+}
+
+.sign-wrap .sign-up {
+  background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);
+}
+
+.sign-wrap .facebook-signin {
+  background-image: linear-gradient(60deg, #96deda 0%, #50c9c3 100%);
+}
+
+.sign-wrap button:hover {
+  transform: scale(1.1);
+  -webkit-box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.sign-wrap .facebook-signin:hover {
+  transform: scale(1.1);
+  -webkit-box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.sign-wrap .sign-up:hover {
+  transform: scale(1.1);
+  -webkit-box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+/*index==========================*/
+.oder-move-wrap {
+  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -28px;
+  margin-left: -80px;
+  width: 180px;
+  height: 56px;
+  border-radius: 56px;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 17px;
+  background-color: #265DFB;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  animation: oder 1s ease-out;
+  -webkit-box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.oder-move-wrap h3 {
+  z-index: 10;
+}
+
+.oder-move-wrap .round {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  background: #F86861;
+  width: 0;
+  height: 0;
+  transition: all 0.2s;
+}
+
+.oder-move-wrap .round h3 {
+  position: absolute;
+  top: 68px;
+  left: 140px;
+}
+
+@keyframes oder {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    margin-left: -28px;
+    color: #265DFB;
+    width: 56px;
+    box-shadow: none;
+  }
+  20% {
+    transform: scale(1);
+  }
+  40% {
+    opacity: 1;
+    margin-left: -28px;
+    color: #265DFB;
+  }
+  70% {
+    margin-left: -80px;
+    width: 56px;
+    color: #265DFB;
+  }
+  100% {
+  }
+}
+
+.oder-move-wrap:hover {
+  transform: scale(1.1);
+}
+
+.oder-move-wrap:hover .round {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 200px;
+}
+#id_authority{
+  max-width: 400px;
+  width: 100%;
+  margin: 16px auto;
+  height: 24px;
+  padding: 0;
+  display: block;
+  box-sizing: border-box;
+}
+
+ul,li,ol{
+  list-style: none;
+}
+.nav-wrap{
+  float: right;
+}
+a {
+  color: #333;
+}
+.nav-wrap > li{
+  float: left;
+    padding-left: 12px;
+  color: #333;
+
+}
+.sign-wrap > div{
+  margin: 16px 0;
+}
