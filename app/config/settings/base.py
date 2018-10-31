@@ -27,6 +27,7 @@ STATICFILES_DIR = [
 
 secrets = json.load(open(os.path.join(SECRETS_DIR, 'secrets.json')))
 
+AUTH_USER_MODEL = 'members.User'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'skill.apps.SkillConfig',
     'armor.apps.ArmorConfig',
     'items.apps.ItemsConfig',
+    'members.apps.MembersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
