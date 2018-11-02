@@ -10,6 +10,7 @@ requests = "*"
 "beautifulsoup4" = "*"
 lxml = "*"
 uwsgi = "*"
+djangorestframework = "*"
 
 [dev-packages]
 django-extensions = "*"
