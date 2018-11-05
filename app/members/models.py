@@ -10,14 +10,18 @@ class UserManager(DjangoUserManager):
             username=kwargs.get('username'),
             email=kwargs.get('email'),
             password=kwargs.get('password'),
-            first_name=kwargs.get('first_name', ''),
-            phone_number=kwargs.get('phone_number', ''),
         )
         return user
 
 
 class User(AbstractUser):
-    username = models.CharField(max_length=200)
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
-    create_date = models.DateField(auto_now_add=True)
+    AUTH_CHOICE= (
+        ('A', 'Local Auth'),
+        ('K', 'Kakao'),
+        ('N', 'Naver'),
+    )
+
+    username = models.CharField(max_length=200, unique=True)
+    auth = models.CharField(max_length=1, choices=AUTH_CHOICE, default='A')
+    email = models.CharField(max_length=50)
+    create_at = models.DateField(auto_now_add=True)
