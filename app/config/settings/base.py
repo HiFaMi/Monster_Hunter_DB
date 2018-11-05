@@ -33,6 +33,13 @@ AUTH_USER_MODEL = 'members.User'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = secrets['SECRET_KEY']
+KAKAO_APP_ID = secrets['KAKAO_APP_ID']
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+
+    'members.backends.KakaoBackend',
+]
 
 
 # Application definition
@@ -51,6 +58,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
