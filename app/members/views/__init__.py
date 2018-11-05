@@ -1,3 +1,2 @@
-from django.shortcuts import render
-
-# Create your views here.
+from .user_list import *
+from .kakao_auth import *
