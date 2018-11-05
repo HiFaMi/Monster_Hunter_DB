@@ -13,13 +13,7 @@ class UserAdmin(BaseUserAdmin):
         }),
         ('개인정보', {
             'fields': (
-                'last_name',
-                'first_name',
                 'email',
-                'profile_image',
-                'phone_number',
-                'gender',
-                'is_host',
             ),
         }),
         ('권한', {
