@@ -34,11 +34,14 @@ AUTH_USER_MODEL = 'members.User'
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = secrets['SECRET_KEY']
 KAKAO_APP_ID = secrets['KAKAO_APP_ID']
+NAVER_CLIENT_ID = secrets['NAVER_CLIENT_ID']
+NAVER_SECRET_KEY = secrets['NAVER_SECRET_KEY']
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 
-    'members.backends.KakaoBackend',
+    # 'members.backends.KakaoBackend',
+    'members.backends.NaverBackend',
 ]
 
 
