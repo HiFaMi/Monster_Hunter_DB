@@ -79,7 +79,6 @@ class NaverBackend:
 
             response = requests.post(url, params, headers=HEADERS)
             response_dict = response.json()
-            print(response_dict)
             access_token = response_dict['access_token']
             return access_token
 
