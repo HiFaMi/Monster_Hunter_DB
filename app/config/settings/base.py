@@ -40,8 +40,8 @@ NAVER_SECRET_KEY = secrets['NAVER_SECRET_KEY']
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 
-    # 'members.backends.KakaoBackend',
-    'members.backends.NaverBackend',
+    'members.backends.kakao.KakaoBackend',
+    'members.backends.naver.NaverBackend',
 ]
 
 
