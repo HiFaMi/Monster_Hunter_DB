@@ -2,8 +2,10 @@ import requests
 import json
 
 from django.conf import settings
-from django.contrib.auth import get_user_model, authenticate
+from django.contrib.auth import get_user_model
 from django.shortcuts import render
+
+from ..backends.kakao import KakaoBackend
 
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
@@ -22,7 +24,7 @@ class KakaoAuth(APIView):
 
     def get(self, request):
         code = request.GET.get('code')
-        user = authenticate(request, code=code)
+        user = KakaoBackend.authenticate(request, code=code)
 
         token, __ = Token.objects.get_or_create(user=user)
         data = {
