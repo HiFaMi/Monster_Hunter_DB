@@ -20,7 +20,7 @@ class KakaoBackend:
             params = {
                 'grant_type': 'authorization_code',
                 'client_id': settings.KAKAO_APP_ID,
-                'redirect_url': 'http://localhost:8000/members/oauth/',
+                'redirect_url': 'http://localhost:8000/members/kakao_oauth/',
                 'code': code
             }
 
