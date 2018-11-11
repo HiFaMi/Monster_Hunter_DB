@@ -42,6 +42,8 @@ AUTHENTICATION_BACKENDS = [
 
     'members.backends.kakao.KakaoBackend',
     'members.backends.naver.NaverBackend',
+
+    'social_core.backends.google.GoogleOAuth2',
 ]
 
 
