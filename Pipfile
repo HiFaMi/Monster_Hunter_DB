@@ -11,6 +11,7 @@ requests = "*"
 lxml = "*"
 uwsgi = "*"
 djangorestframework = "*"
+social-auth-app-django = "*"
 
 [dev-packages]
 django-extensions = "*"
