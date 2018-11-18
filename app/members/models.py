@@ -15,13 +15,20 @@ class UserManager(DjangoUserManager):
 
 
 class User(AbstractUser):
-    AUTH_CHOICE= (
+    AUTH_CHOICE = (
         ('A', 'Local Auth'),
         ('K', 'Kakao'),
         ('N', 'Naver'),
     )
 
+    MODEL_CHECK = (
+        ('n', 'Not'),
+        ('y', 'Yes'),
+    )
+
     username = models.CharField(max_length=200, unique=True)
     auth = models.CharField(max_length=1, choices=AUTH_CHOICE, default='A')
     email = models.CharField(max_length=50)
+    email_check = models.CharField(max_length=1, default='n')
     create_at = models.DateField(auto_now_add=True)
+
