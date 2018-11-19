@@ -28,6 +28,7 @@ class UserSignupSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = User.objects.create_user(
             username=self.validated_data['username'],
+            email=self.validated_data['email'],
             password=self.validated_data['password']
         )
         # user.save()
@@ -35,13 +36,13 @@ class UserSignupSerializer(serializers.ModelSerializer):
 
         message = render_to_string('account_activate_email.html', {
             'user': user,
-            'domain': 'devkmg.net',
+            'domain': 'localhost:8000',
             'uid': urlsafe_base64_encode(force_bytes(user.pk)).decode('utf-8'),
             'token': account_activation_token.make_token(user)
         })
 
         mail_subject = 'test'
-        to_email = user.username
+        to_email = user.email
         email = EmailMessage(mail_subject, message, to=[to_email])
         email.send()
 
