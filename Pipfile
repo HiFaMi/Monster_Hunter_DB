@@ -12,7 +12,7 @@ lxml = "*"
 uwsgi = "*"
 djangorestframework = "*"
 social-auth-app-django = "*"
-django-celery = "*"
+celery = "*"
 
 [dev-packages]
 django-extensions = "*"
