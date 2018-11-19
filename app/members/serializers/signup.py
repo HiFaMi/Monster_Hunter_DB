@@ -1,10 +1,7 @@
 from django.contrib.auth import get_user_model
-from django.core.mail import EmailMessage
-from django.template.loader import render_to_string
-from django.utils.encoding import force_bytes
-from django.utils.http import urlsafe_base64_encode
 from rest_framework import serializers
-from ..tokens import account_activation_token
+
+from ..tasks import send_mail
 
 User = get_user_model()
 
@@ -30,19 +27,7 @@ class UserSignupSerializer(serializers.ModelSerializer):
             email=self.validated_data['email'],
             password=self.validated_data['password']
         )
-        # user.save()
-        # send_mail.delay(user.pk)
-
-        message = render_to_string('account_activate_email.html', {
-            'user': user,
-            'domain': 'localhost:8000',
-            'uid': urlsafe_base64_encode(force_bytes(user.pk)).decode('utf-8'),
-            'token': account_activation_token.make_token(user)
-        })
-
-        mail_subject = 'test'
-        to_email = user.email
-        email = EmailMessage(mail_subject, message, to=[to_email])
-        email.send()
+        user.save()
+        send_mail.delay(user.pk)
 
         return validated_data
