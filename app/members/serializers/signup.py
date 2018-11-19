@@ -16,7 +16,6 @@ class UserSignupSerializer(serializers.ModelSerializer):
         fields = (
             'username',
             'email',
-            'email_check',
             'password',
         )
 

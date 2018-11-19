@@ -26,7 +26,7 @@ class User(AbstractUser):
         ('y', 'Yes'),
     )
 
-    username = models.CharField(max_length=200, unique=True)
+    username = models.CharField(max_length=200, unique=True, verbose_name='ID')
     auth = models.CharField(max_length=1, choices=AUTH_CHOICE, default='A')
     email = models.CharField(max_length=50)
     email_check = models.CharField(max_length=1, default='n')
