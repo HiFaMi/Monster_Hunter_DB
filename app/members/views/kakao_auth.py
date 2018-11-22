@@ -1,9 +1,4 @@
-import requests
-import json
-
-from django.conf import settings
 from django.contrib.auth import get_user_model
-from django.shortcuts import render
 
 from ..backends.kakao import KakaoBackend
 
