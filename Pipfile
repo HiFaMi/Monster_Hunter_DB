@@ -13,6 +13,7 @@ uwsgi = "*"
 djangorestframework = "*"
 social-auth-app-django = "*"
 celery = "*"
+django-allauth = "*"
 
 [dev-packages]
 django-extensions = "*"
