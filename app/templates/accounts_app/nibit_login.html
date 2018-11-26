@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+    <p>This is the login template</p>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ login_form.as_p }}
+        <input type="submit" value="login">
+    </form>
+
+    </body>
+</html>
