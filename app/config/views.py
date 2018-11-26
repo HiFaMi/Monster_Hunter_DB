@@ -14,3 +14,11 @@ def index(request):
     }
 
     return render(request, 'main.html', context)
+
+
+def account(request):
+    context = {
+
+    }
+
+    return render(request, 'test_account.html', context)
