@@ -46,20 +46,18 @@ EMAIL_HOST_PASSWORD = secrets['EMAIL_HOST_PASSWORD']
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 AUTHENTICATION_BACKENDS = [
+    'allauth.account.auth_backends.AuthenticationBackend',
+
     'django.contrib.auth.backends.ModelBackend',
 
     'members.backends.kakao.KakaoBackend',
     'members.backends.naver.NaverBackend',
-
-    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-# allauth set redirect URL
-# ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = True
-# LOGIN_REDIRECT_URL = '/'
-# ACCOUNT_AUTHENTICATED_LOGOUT_REDIRECTS = True
-# ACCOUNT_LOGOUT_REDIRECT_URL = '/'
+SITE_ID = 0
 
+# allauth set redirect URL
+LOGIN_REDIRECT_URL = 'index'
 
 
 # Application definition
@@ -88,9 +86,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.github',
+    'allauth.socialaccount.providers.kakao',
 ]
-
-SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
