@@ -18,14 +18,18 @@ from django.contrib import admin
 from django.contrib.auth.decorators import login_required
 from django.urls import path, include
 
+from members.views import accounts_login, accounts_social_login
 from .views import index, account
 
 # admin.site.login = login_required(admin.site.login)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index'),
+    # path('', index, name='index'),
     path('weapon/', include('weapon.urls')),
     path('armor/', include('armor.urls')),
     path('members/', include('members.urls')),
+    path('accounts/login/', accounts_login.account_login, name='accounts_login'),
+    path('accounts/', include('allauth.urls')),
+    path('index/', accounts_social_login.SocialLogin.as_view(), name='index'),
 ]
