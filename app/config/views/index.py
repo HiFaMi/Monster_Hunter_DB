@@ -1,6 +1,5 @@
+from django.conf import settings
 from django.shortcuts import render
-
-from config import settings
 
 
 def index(request):
@@ -14,11 +13,3 @@ def index(request):
     }
 
     return render(request, 'main.html', context)
-
-
-def account(request):
-    context = {
-
-    }
-
-    return render(request, 'test_account.html', context)
