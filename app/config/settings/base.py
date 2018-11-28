@@ -58,6 +58,8 @@ SITE_ID = 0
 
 # allauth set redirect URL
 LOGIN_REDIRECT_URL = 'index'
+# logout의 redirect url의 경우 ACCOUNT를 붙여서 사용해야 한다.
+ACCOUNT_LOGOUT_REDIRECT_URL = 'index'
 
 
 # Application definition
