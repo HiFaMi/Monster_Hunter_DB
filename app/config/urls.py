@@ -15,13 +15,9 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.contrib.auth.decorators import login_required
 from django.urls import path, include
 
-from members.views import accounts_login, accounts_social_login
-from .views import index, account
-
-# admin.site.login = login_required(admin.site.login)
+from .views import accounts_login, accounts_social_login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,7 +25,8 @@ urlpatterns = [
     path('weapon/', include('weapon.urls')),
     path('armor/', include('armor.urls')),
     path('members/', include('members.urls')),
-    path('accounts/login/', accounts_login.account_login, name='accounts_login'),
+    # 기본적으로 login page가 지원되며 따로 custom하여 사용할 수 있다.
+    # path('accounts/login/', accounts_login.account_login, name='accounts_login'),
     path('accounts/', include('allauth.urls')),
     path('index/', accounts_social_login.SocialLogin.as_view(), name='index'),
 ]
