@@ -55,8 +55,8 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 # all auth를 이용하기 위해 등록된 SITE들 중 0번쨰로 등록 되어 있는것
-
-SITE_ID = 0
+# localhost 추가 및 테스트
+SITE_ID = 4
 
 # allauth set redirect URL
 LOGIN_REDIRECT_URL = 'index'
