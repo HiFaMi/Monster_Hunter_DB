@@ -63,6 +63,12 @@ LOGIN_REDIRECT_URL = 'index'
 # logout의 redirect url의 경우 ACCOUNT를 붙여서 사용해야 한다.
 ACCOUNT_LOGOUT_REDIRECT_URL = 'index'
 
+# SOCIALACCOUNT_PROVIDERS = {
+#     'twitch': {
+#         'SCOPE': ['user_read',]
+#     },
+# }
+
 
 # Application definition
 
